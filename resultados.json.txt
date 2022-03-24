@@ -1,0 +1,67 @@
+--------------------------------------------------------------------
+uri: calculo conversion 
+--------------------------------------------------------------------
+http://localhost:8765/currency-conversion/from/USD/to/PEN/quantity/10 
+
+resultado:
+{
+    "from": "USD",
+    "to": "PEN",
+    "conversionMultiple": 3.78,
+    "quantity": 10,
+    "totalCalculatedAmount": 37.8
+}
+
+---------------------------------------------------------------------
+uri: post agregar nueva divisa
+---------------------------------------------------------------------
+
+http://localhost:8765/currency-exchange/save
+
+resultado:
+
+{
+    "from": "USD",
+    "to": "LIBRA",
+    "conversionMultiple": 0.75
+}
+---------------------------------------------------------------------
+uri: listado de divisa.
+----------------------------------------------------------------------
+http://localhost:8765/currency-exchange
+
+resultado:
+
+[
+    {
+        "id": 1,
+        "from": "USD",
+        "to": "PEN",
+        "conversionMultiple": 3.78
+    },
+    {
+        "id": 2,
+        "from": "EUR",
+        "to": "PEN",
+        "conversionMultiple": 4.18
+    },
+    {
+        "id": 3,
+        "from": "GBP",
+        "to": "PEN",
+        "conversionMultiple": 4.98
+    },
+    {
+        "id": 4,
+        "from": "USD",
+        "to": "LIBRA",
+        "conversionMultiple": 0.75
+    }
+]
+
+
+
+
+
+
+
