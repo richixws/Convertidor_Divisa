@@ -26,6 +26,8 @@ public class CurrencyConversionController {
 
 	
   private Logger logger = LoggerFactory.getLogger(this.getClass());
+  
+  private final String nombre ="Richard Wong Solorzano";
 
 	
   @Autowired
@@ -44,6 +46,7 @@ public class CurrencyConversionController {
   
      ExchangeValue exchangeValue=exchangeService.findByFromAndTo(from, to);
     // logger.info("INFO:",exchangeValue.getId()+","+exchangeValue.getTo()+","+exchangeValue.getFrom()+","+exchangeValue.getConversionMultiple());
+	 exchangeValue.setNombre(nombre);
      return exchangeValue;
 	  
   }
@@ -52,6 +55,7 @@ public class CurrencyConversionController {
   public ResponseEntity<?> agregarTipoCambio(@RequestBody ExchangeValue exchangeValue) {
 	  
 	  ExchangeValue saveExchange=exchangeService.saveExchange(exchangeValue);
+	  saveExchange.setNombre(nombre);
 	  return new ResponseEntity<>(saveExchange, HttpStatus.CREATED);
 	  
   }

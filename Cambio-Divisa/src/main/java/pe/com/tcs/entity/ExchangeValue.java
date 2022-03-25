@@ -27,6 +27,8 @@ public class ExchangeValue implements Serializable{
 	@Column(name = "conversion")
 	private BigDecimal conversionMultiple;
 	
+	private String nombre;
+	
 //	private BigDecimal quantity;
 	
 //	private BigDecimal totalCalculatedAmount;
@@ -46,12 +48,13 @@ public class ExchangeValue implements Serializable{
 	 */
 
 
-	public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiple) {
+	public ExchangeValue(Long id, String from, String to, BigDecimal conversionMultiple,String nombre) {
 		super();
 		this.id = id;
 		this.from = from;
 		this.to = to;
 		this.conversionMultiple = conversionMultiple;
+		this.nombre =nombre;
 	}
 
 	
@@ -76,6 +79,14 @@ public class ExchangeValue implements Serializable{
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+    public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 
